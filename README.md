@@ -50,10 +50,10 @@ Flow:
 
 + Passwords are hashed with bcrypt before storage.
 
-Session management is handled via express-session.
++ Session management is handled via express-session.
 
-.env keeps sensitive data out of source code and version control.
++ .env keeps sensitive data out of source code and version control.
 
-It is recommended to serialize only the user ID in session, not the full object.
++ It is recommended to serialize only the user ID in session, not the full object.
 
 
