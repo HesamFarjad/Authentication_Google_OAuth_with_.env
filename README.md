@@ -44,3 +44,15 @@ Flow:
 4. If user doesn't exist in the database, they are added
 
 5. User is logged in and redirected to the protected `/secrets` page
+
+
+🛡️ Security Notes
+Passwords are hashed with bcrypt before storage.
+
+Session management is handled via express-session.
+
+.env keeps sensitive data out of source code and version control.
+
+It is recommended to serialize only the user ID in session, not the full object.
+
+
