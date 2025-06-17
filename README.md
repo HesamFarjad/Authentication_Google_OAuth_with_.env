@@ -48,7 +48,7 @@ Flow:
 
 ## 🛡️ Security Notes
 
-!+ Passwords are hashed with bcrypt before storage.
++ Passwords are hashed with bcrypt before storage.
 
 Session management is handled via express-session.
 
