@@ -6,7 +6,6 @@ Added Google OAuth and introduced .env file for secure environment variable mana
 
 A Node.js authentication app using Express.js, PostgreSQL, and Passport.js that supports both **Local Authentication (email & password)** and **Google OAuth 2.0**. Environment variables are securely managed using a `.env` file.
 
----
 
 ## 📦 Features
 
@@ -18,7 +17,6 @@ A Node.js authentication app using Express.js, PostgreSQL, and Passport.js that 
 - ✅ Environment variables stored securely in `.env`
 - ✅ Protected routes (e.g. `/secrets`) accessible only when logged in
 
----
 
 ## 🗃️ Environment Configuration (`.env`)
 
