@@ -34,12 +34,13 @@ Example `.env` file:
 Users can log in using their Google account via Passport's google-oauth2 strategy.
 
 Flow:
-User navigates to `/auth/google`
 
-Google asks for permission to access profile and email
+1. User navigates to `/auth/google`
 
-On success, user is redirected to `/auth/google/secrets`
+2. Google asks for permission to access profile and email
 
-If user doesn't exist in the database, they are added
+3. On success, user is redirected to `/auth/google/secrets`
 
-User is logged in and redirected to the protected `/secrets` page
+4. If user doesn't exist in the database, they are added
+
+5. User is logged in and redirected to the protected `/secrets` page
