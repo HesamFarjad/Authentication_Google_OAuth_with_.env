@@ -27,6 +27,7 @@ Example `.env` file:
 
 <img width="473" alt="4 2_ env" src="https://github.com/user-attachments/assets/cb40cffd-a527-4532-9eb9-00794780f52a" />
 
+<img width="754" alt="5 2" src="https://github.com/user-attachments/assets/218fe7e5-0ac4-4fac-a0a4-2e32132cbed6" />
 
 ## 🔑 Google OAuth 2.0 Authentication
 Users can log in using their Google account via Passport's google-oauth2 strategy.
@@ -42,6 +43,10 @@ Flow:
 4. If user doesn't exist in the database, they are added
 
 5. User is logged in and redirected to the protected `/secrets` page
+
+
+![4 1 1](https://github.com/user-attachments/assets/3abedb3e-8c42-4d77-a148-d0222e5592b7)
+<img width="1438" alt="5" src="https://github.com/user-attachments/assets/f8740dac-2bea-4861-902d-20d42bdecfe8" />
 
 
 ## 🛡️ Security Notes
