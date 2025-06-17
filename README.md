@@ -46,7 +46,7 @@ Flow:
 5. User is logged in and redirected to the protected `/secrets` page
 
 
-🛡️ Security Notes
+## 🛡️ Security Notes
 Passwords are hashed with bcrypt before storage.
 
 Session management is handled via express-session.
