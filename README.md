@@ -17,6 +17,11 @@ A Node.js authentication app using Express.js, PostgreSQL, and Passport.js that 
 - ✅ Environment variables stored securely in `.env`
 - ✅ Protected routes (e.g. `/secrets`) accessible only when logged in
 
+## 🛠️ Add secret column to users table
+To store user-submitted secrets, add a new column to your users table:
+
+<img width="1032" alt="1" src="https://github.com/user-attachments/assets/aab1b3a1-2abd-4bcb-a0bb-e4347d146729" />
+
 
 ## 🗃️ Environment Configuration (`.env`)
 
