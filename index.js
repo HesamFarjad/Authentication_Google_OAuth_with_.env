@@ -56,14 +56,6 @@ app.get("/logout", (req, res) => {
   });
 });
 
-app.get("/secrets", (req, res) => {
-  if (req.isAuthenticated()) {
-    res.render("secrets.ejs");
-  } else {
-    res.redirect("/login");
-  }
-});
-
 app.get(
   "/auth/google",
   passport.authenticate("google", {
@@ -78,6 +70,58 @@ app.get(
     failureRedirect: "/login",
   })
 );
+
+////////////////// UPDATE GET SECRET ROUTE //////////////////
+app.get("/secrets", async (req, res) => {
+  if (req.isAuthenticated()) {
+    try {
+      const result = await db.query(
+        `SELECT secret FROM users WHERE email = $1`,
+        [req.user.email]
+      );
+      console.log("Query Result:", result.rows);
+
+      const secret = result.rows[0]?.secret;
+      if (secret) {
+        res.render("secrets.ejs", { secret });
+      } else {
+        res.render("secrets.ejs", { secret: "You can submit your secret !! " });
+      }
+    } catch (error) {
+      console.error("Error fetching secret:", error);
+      res.status(500).render("secrets.ejs", {
+        secret: "An error occurred retrieving your secret.",
+      });
+    }
+  } else {
+    res.redirect("/login");
+  }
+});
+
+//////////////SUBMIT GET ROUTE/////////////////
+app.get("/submit", (req, res) => {
+  if (req.isAuthenticated()) {
+    res.render("submit.ejs");
+  } else {
+    res.redirect("/login");
+  }
+});
+
+//////////////SUBMIT POST ROUTE/////////////////
+app.post("/submit", async (req, res) => {
+  const secret = req.body.secret;
+  console.log(req.user);
+
+  try {
+    await db.query("UPDATE users SET secret = $1 WHERE email = $2", [
+      secret,
+      req.user.email,
+    ]);
+    res.redirect("/secrets");
+  } catch (error) {
+    console.log(error);
+  }
+});
 
 app.post(
   "/login",
